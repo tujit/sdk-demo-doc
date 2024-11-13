@@ -1,0 +1,52 @@
+---
+sidebar_position: 2
+description: Implementing Authorization Code flow with Cidaas SDK
+# below are test font matter
+# sidebar_label: Easy
+# sidebar_class_name: green
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import SamplePhp from '!!raw-loader!./Sample.php';
+import SampleJs from '!!raw-loader!./Sample.js';
+import SampleGo from '!!raw-loader!./Sample.go';
+import SampleAndroid from '!!raw-loader!./android.java';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Authorization Code Flow
+
+The Authorization Code flow is the most secure way to implement OAuth 2.0 for server-side applications.
+
+## How it Works
+
+1. Your application redirects to Cidaas
+2. User authenticates and authorizes your app
+3. Cidaas redirects back with an authorization code
+4. Your server exchanges the code for tokens
+
+
+<Tabs>
+  <TabItem value="js" label="Javascript" default>
+    <CodeBlock language="jsx">{SampleJs}</CodeBlock>
+  </TabItem>
+  <TabItem value="php" label="PHP">
+    <CodeBlock language="jsx">{SamplePhp}</CodeBlock>
+  </TabItem>
+  <TabItem value="go" label="Go">
+    <CodeBlock language="jsx">{SampleGo}</CodeBlock>
+  </TabItem>
+   <TabItem value="kotlin" label="Android">
+    <CodeBlock language="jsx">{SampleAndroid}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+
+
+## Implementation Steps
+
+1. Configure your client
+2. Redirect to authorization endpoint
+3. Handle the callback
+4. Exchange code for tokens
+5. Use tokens to access resources

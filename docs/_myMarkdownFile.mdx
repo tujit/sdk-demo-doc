@@ -1,0 +1,195 @@
+import CodeBlock from '@theme/CodeBlock';
+import MyComponentSource from '!!raw-loader!./Test.php';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import styles from './styles.module.css';
+
+
+
+
+<Tabs>
+  <TabItem value="apple" label="Javascript" default>
+    <CodeBlock language="jsx">{MyComponentSource}</CodeBlock>
+  </TabItem>
+  <TabItem value="orange" label="PHP">
+    This is an orange 🍊
+  </TabItem>
+  <TabItem value="banana" label="Go">
+    This is a banana 🍌
+  </TabItem>
+</Tabs>
+
+
+<Tabs groupId="operating-systems">
+  <TabItem value="win" label="Windows">Use Ctrl + C to copy.</TabItem>
+  <TabItem value="mac" label="macOS">Use Command + C to copy.</TabItem>
+</Tabs>
+
+<Tabs groupId="operating-systems">
+  <TabItem value="win" label="Windows">Use Ctrl + V to paste.</TabItem>
+  <TabItem value="mac" label="macOS">Use Command + V to paste.</TabItem>
+</Tabs>
+
+
+
+<Tabs groupId="operating-systems">
+  <TabItem value="win" label="Windows">
+    I am Windows.
+  </TabItem>
+  <TabItem value="mac" label="macOS">
+    I am macOS.
+  </TabItem>
+  <TabItem value="linux" label="Linux">
+    I am Linux.
+  </TabItem>
+</Tabs>
+
+<Tabs className="unique-tabs">
+  <TabItem value="Apple">This is an apple 🍎</TabItem>
+  <TabItem value="Orange">This is an orange 🍊</TabItem>
+  <TabItem value="Banana">This is a banana 🍌</TabItem>
+</Tabs>
+
+
+
+<Tabs>
+  <TabItem value="apple" label="Apple" attributes={{className: styles.red}}>
+    This is an apple 🍎
+  </TabItem>
+  <TabItem value="orange" label="Orange" attributes={{className: styles.orange}}>
+    This is an orange 🍊
+  </TabItem>
+  <TabItem value="banana" label="Banana" attributes={{className: styles.yellow}}>
+    This is a banana 🍌
+  </TabItem>
+</Tabs>
+
+```jsx title="/src/components/HelloCodeTitle.js"
+function HelloCodeTitle(props) {
+  // highlight-next-line
+  return <h1>Hello, {props.name}</h1>;
+}
+```
+
+```js
+console.log('Every repo must come with a mascot.');
+```
+
+
+```jsx {1,4-6,11}
+import React from 'react';
+
+function MyComponent(props) {
+  if (props.isBar) {
+    return <div>Bar</div>;
+  }
+
+  return <div>Foo</div>;
+}
+
+export default MyComponent;
+```
+
+
+```jsx live
+function Clock(props) {
+  const [date, setDate] = useState(new Date());
+  useEffect(() => {
+    const timerID = setInterval(() => tick(), 1000);
+
+    return function cleanup() {
+      clearInterval(timerID);
+    };
+  });
+
+  function tick() {
+    setDate(new Date());
+  }
+
+  return (
+    <div>
+      <h2>It is {date.toLocaleTimeString()}.</h2>
+    </div>
+  );
+}
+```
+
+<Tabs>
+  <TabItem value="js" label="JavaScript">
+
+  ```js
+  function helloWorld() {
+    console.log('Hello, world!');
+  }
+  ```
+
+  </TabItem>
+  <TabItem value="py" label="Python">
+
+  ```py
+  def hello_world():
+    print("Hello, world!")
+  ```
+
+  </TabItem>
+  <TabItem value="java" label="Java">
+
+  ```java
+  class HelloWorld {
+    public static void main(String args[]) {
+      System.out.println("Hello, World");
+    }
+  }
+  ```
+
+</TabItem>
+</Tabs>
+
+:::note
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::tip
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::info
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::warning
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::danger
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+
+:::::info[Parent]
+
+Parent content
+
+::::danger[Child]
+
+Child content
+
+:::tip[Deep Child]
+
+Deep child content
+
+:::
+
+::::
+
+:::::

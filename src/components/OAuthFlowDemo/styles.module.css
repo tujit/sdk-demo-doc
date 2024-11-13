@@ -1,0 +1,257 @@
+.container {
+  margin: 2rem auto;
+  max-width: 800px;
+  width: 100%;
+}
+
+.flowSelector {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.flowButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-color);
+  color: var(--ifm-color-emphasis-700);
+  cursor: pointer;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s;
+}
+
+.flowButton:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.flowButton.selected {
+  background: var(--ifm-color-primary);
+  color: white;
+  border-color: var(--ifm-color-primary);
+}
+
+.codeContainer {
+  background-color: #1e1e1e;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.codeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: #1e1e1e;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.languageSelector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.languageButton {
+  background: none;
+  border: none;
+  padding: 0.25rem 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 400;
+  border-radius: 0.25rem;
+  transition: all 0.2s;
+}
+
+.languageButton:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.languageButton.selected {
+  color: #ffffff;
+  font-weight: 600;
+  background-color: transparent;
+}
+
+/* Style for the code block itself */
+.codeContainer :global(pre) {
+  margin: 0;
+  padding: 1rem;
+  background-color: transparent;
+}
+
+.codeContainer :global(code) {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Override Docusaurus CodeBlock styles */
+.codeContainer :global(.prism-code) {
+  background-color: #1e1e1e !important;
+  margin: 0;
+}
+
+/* Target the copy button container */
+.codeContainer :global(.clean-btn) {
+  position: static !important;
+  height: auto !important;
+  top: auto !important;
+  right: auto !important;
+}
+
+/* Style the copy button */
+.codeContainer :global(.clean-btn) {
+  color: #ffffff !important;
+  opacity: 1;
+  padding: 0.25rem 0.75rem;
+  background: none;
+  border: none;
+}
+
+.codeContainer :global(.clean-btn:hover) {
+  color: rgba(255, 255, 255, 0.8) !important;
+  background-color: transparent;
+}
+
+/* If there's an icon inside the copy button */
+.codeContainer :global(.clean-btn svg) {
+  color: #ffffff !important;
+}
+
+/* Syntax highlighting colors */
+.codeContainer :global(.token.keyword),
+.codeContainer :global(.token.operator) {
+  color: #ff0000 !important; /* Red for keywords */
+}
+
+.codeContainer :global(.token.function) {
+  color: rgb(118, 217, 230) !important; /* Light blue for functions */
+}
+
+.codeContainer :global(.token.string),
+.codeContainer :global(.token.string-property) {
+  color: #9d00ff !important; /* Violet for strings */
+}
+
+.codeContainer :global(.token.punctuation),
+.codeContainer :global(.token.parameter),
+.codeContainer :global(.token.plain-text) {
+  color: #ffffff !important; /* White for punctuation and general text */
+}
+
+/* Ensure the background stays black */
+.codeContainer :global(.prism-code) {
+  background-color: #000 !important;
+}
+
+/* Base text color */
+.codeContainer :global(.prism-code),
+.codeContainer :global(.token) {
+  color: #ffffff !important;
+}
+
+/* Keywords and operators - including PHP and Kotlin specific */
+.codeContainer :global(.token.keyword),
+.codeContainer :global(.token.operator),
+.codeContainer :global(.token.boolean),
+.codeContainer :global(.token.number),
+.codeContainer :global(.token.this),
+.codeContainer :global(.token.val),
+.codeContainer :global(.token.fun),
+.codeContainer :global(.token.function-variable) {
+  color: #ff0000 !important; /* Red */
+}
+
+/* Functions and methods */
+.codeContainer :global(.token.function),
+.codeContainer :global(.token.method),
+.codeContainer :global(.token.class-name),
+.codeContainer :global(.token.property-access),
+.codeContainer :global(.token.method-variable) {
+  color: rgb(118, 217, 230) !important; /* Light blue */
+}
+
+/* Strings and string-related */
+.codeContainer :global(.token.string),
+.codeContainer :global(.token.string-property),
+.codeContainer :global(.token.attr-value),
+.codeContainer :global(.token.regex),
+.codeContainer :global(.token.single-quoted-string),
+.codeContainer :global(.token.double-quoted-string) {
+  color: #9d00ff !important; /* Violet */
+}
+
+/* PHP specific */
+.codeContainer :global(.token.variable),
+.codeContainer :global(.token.property),
+.codeContainer :global(.token.dollar-sign),
+.codeContainer :global(.token.variable-name) {
+  color: rgb(118, 217, 230) !important; /* Light blue */
+}
+
+.codeContainer :global(.token.keyword),
+.codeContainer :global(.token.function-name) {
+  color: #ff0000 !important; /* Red */
+}
+
+.codeContainer :global(.token.string),
+.codeContainer :global(.token.single-quoted-string),
+.codeContainer :global(.token.double-quoted-string) {
+  color: #9d00ff !important; /* Violet */
+}
+
+.codeContainer :global(.token.function) {
+  color: rgb(118, 217, 230) !important; /* Light blue */
+}
+
+/* Kotlin/Android specific */
+.codeContainer :global(.token.package),
+.codeContainer :global(.token.import),
+.codeContainer :global(.token.annotation) {
+  color: #ff0000 !important; /* Red */
+}
+
+/* Parameters and named arguments */
+.codeContainer :global(.token.parameter),
+.codeContainer :global(.token.argument) {
+  color: rgb(118, 217, 230) !important; /* Light blue */
+}
+
+/* Ensure background is black */
+.codeContainer :global(.prism-code) {
+  background-color: #000 !important;
+}
+
+/* Comments if needed */
+.codeContainer :global(.token.comment) {
+  color: #666666 !important; /* Dimmed color for comments */
+}
+
+.codeContainer :global(pre),
+.codeContainer :global(code) {
+  text-align: left !important;
+  padding-left: 1rem !important;
+  font-size: 0.875rem !important;
+}
+
+.copyButton {
+  color: #ffffff;
+  background: none;
+  border: none;
+  padding: 0.25rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.copyButton:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Hide the default copy button from CodeBlock */
+.codeContainer :global(.clean-btn) {
+  display: none !important;
+}
