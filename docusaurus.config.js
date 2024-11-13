@@ -25,7 +25,8 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'tujit', // Usually your GitHub org/user name.
   projectName: 'sdk-demo-doc', // Usually your repo name.
-  deploymentBranch: 'master',
+  // deploymentBranch: 'master',
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
