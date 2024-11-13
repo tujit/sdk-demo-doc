@@ -25,9 +25,11 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'tujit', // Usually your GitHub org/user name.
   projectName: 'sdk-demo-doc', // Usually your repo name.
+  deploymentBranch: 'master',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
