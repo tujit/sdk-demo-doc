@@ -1,0 +1,182 @@
+title: userEntity
+x-stoplight:
+  id: 3z5f0p467bunf
+type: object
+description: A userEntity is used to create or update a user in cidaas.
+examples:
+  - userStatus: VERIFIED
+    user_status_reason: string
+    username: string
+    given_name: string
+    sub: string
+    family_name: string
+    middle_name: string
+    nickname: string
+    email: user@example.com
+    mobile_number: string
+    mobile_number_obj:
+      _id: string
+      given_phone: string
+      phone: string
+      country: string
+      dail_code: string
+      carrier_type: string
+      carrier_name: string
+      national_format: string
+      international_format: string
+      E164_format: string
+    phone_number: string
+    phone_number_obj:
+      _id: string
+      given_phone: string
+      phone: string
+      country: string
+      dail_code: string
+      carrier_type: string
+      carrier_name: string
+      national_format: string
+      international_format: string
+      E164_format: string
+    profile: string
+    picture: string
+    website: 'http://example.com'
+    gender: string
+    zoneinfo: string
+    locale: string
+    birthdate: '2019-08-24'
+    address:
+      formatted: string
+      street_address: string
+      locality: string
+      region: string
+      postal_code: '72399'
+      country: string
+    customFields: {}
+    password: string
+    password_hash_info:
+      algorithmTypeId: string
+      passwordHash: string
+      hData:
+        salt: string
+        iterations: string
+    generate_password: true
+    provider: string
+    identityId: string
+    providerUserId: string
+    street_address: string
+    mfa_enabled: true
+    roles:
+      - string
+    groups:
+      - _id: a3eede9f-8b86-4161-9098-4d5bf9e8b7c9
+        sub: 8dfc4306-9f3b-4a33-95d0-98c8954da2c1
+        groupId: CIDAAS_USERS
+        roles:
+          - DEFAULT_ROLE_A
+          - DEFAULT_ROLE_B
+        createdTime: '2019-08-24T14:15:22Z'
+        updatedTime: '2019-08-24T14:15:22Z'
+    trackId: string
+    rawJSON: string
+    need_reset_password: true
+    no_event: string
+    consent_track_ids:
+      - string
+    consents:
+      - fieldKey: string
+        value: string
+    ignore_default_roles:
+      - string
+required:
+  - identities
+properties:
+  sub:
+    type: string
+    description: unique identifier of a user
+    x-stoplight:
+      id: tnxdn68gfnhdb
+  userStatus:
+    $ref: ./userStatus.yaml
+    x-stoplight:
+      id: 6c6wb0jyliamh
+    description: The userstatus determines if the user is allowed to login. Default is VERIFIED
+  user_status_reason:
+    type: string
+    description: brief description of the reason of user status
+    x-stoplight:
+      id: 7f0iz89qhr4po
+  customFields:
+    type: object
+    description: represents the custom specific fields
+    x-stoplight:
+      id: h8ebh67nyr1k4
+  password_hash_info:
+    $ref: ./passwordHashEntity.yaml
+    x-stoplight:
+      id: mi2q2kirv4r39
+  mfa_enabled:
+    type: boolean
+    description: true indicates that for this user 2FA is activated
+    x-stoplight:
+      id: fnjqwhq2qxgqw
+  roles:
+    type: array
+    description: list of roles of a user
+    x-stoplight:
+      id: gl32amly4bf2x
+    items:
+      type: string
+      x-stoplight:
+        id: rgove014u5c5z
+  groups:
+    type: array
+    description: list of groups of a user
+    x-stoplight:
+      id: tqb7rsyc2cifx
+    items:
+      $ref: ./userGroupMap.yaml
+      x-stoplight:
+        id: 5qg1s9w8yryki
+  consents:
+    type: array
+    x-stoplight:
+      id: aoh9ts82ijtjn
+    items:
+      type: object
+      x-stoplight:
+        id: v4r41v0iqyf93
+      properties:
+        fieldKey:
+          type: string
+          description: 'field key to set, if it is configured as registration field setup'
+          x-stoplight:
+            id: lh93x7qrzqmgu
+        state:
+          type: string
+          x-stoplight:
+            id: rvuvazqijp6kg
+          description: 'state of the consent (REVOKED, ACCEPTED, SKIPPED)'
+        consentId:
+          type: string
+          x-stoplight:
+            id: 8fezyz0po03pu
+          description: id of the consent instance
+        versionId:
+          type: string
+          x-stoplight:
+            id: vun1xnu5om9qv
+          description: id of the consent version
+        time:
+          type: string
+          x-stoplight:
+            id: nh9leoth7nymh
+          description: consented time
+  identities:
+    x-stoplight:
+      id: wm7d9ybus99gn
+    type: array
+    description: This is an array of identities. At least one identity must be provided
+    items:
+      $ref: ./userEntity.yaml
+      x-stoplight:
+        id: dpzhqvz5i4ufo

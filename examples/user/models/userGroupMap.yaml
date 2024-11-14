@@ -1,0 +1,50 @@
+title: userGroupMap
+type: object
+description: |
+  user group map represent the relation between a user (sub) and the user group. Actually the user is a member of the user group with or without roles.
+
+  cidaas provides standard user groups with groupIds `CIDAAS_ADMINS` and `CIDAAS_USERS`. Default roles are per se mapped to CIDAAS_USERS group as described in examples below. Since all users do belong to `CIDAAS_USERS` these roles can be considered as default_roles.
+properties:
+  _id:
+    description: unique technical id of the user group map
+    type: string
+  sub:
+    description: unique user id of the user
+    type: string
+  groupId:
+    description: id of the user group where the user is assigned to
+    type: string
+  roles:
+    description: an optional list of roles which the user holds in this user group
+    type: array
+    items:
+      type: string
+      uniqueItems: true
+  createdTime:
+    type: string
+    format: date-time
+    description: creation date of user group map
+  updatedTime:
+    type: string
+    format: date-time
+    description: last updated date of user group map
+required:
+  - sub
+  - groupId
+examples:
+  - _id: a3eede9f-8b86-4161-9098-4d5bf9e8b7c9
+    sub: 8dfc4306-9f3b-4a33-95d0-98c8954da2c1
+    groupId: CIDAAS_USERS
+    roles:
+      - DEFAULT_ROLE_A
+      - DEFAULT_ROLE_B
+    createdTime: '2019-08-24T14:15:22Z'
+    updatedTime: '2019-08-24T14:15:22Z'
+  - _id: e4e94558-d78e-47fd-9b4d-a77ae3784d87
+    sub: 8dfc4306-9f3b-4a33-95d0-98c8954da2c1
+    groupId: CIDAAS_ADMINS
+    roles:
+      - USER_CREATE
+      - USER_READ
+    createdTime: '2019-08-24T14:15:22Z'
+    updatedTime: '2019-08-24T14:15:22Z'

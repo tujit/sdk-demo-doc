@@ -1,0 +1,7 @@
+title: hData
+type: object
+properties:
+  salt:
+    type: string
+  iterations:
+    type: string

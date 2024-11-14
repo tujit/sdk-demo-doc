@@ -1,0 +1,37 @@
+title: errorResponse
+type: object
+x-tags:
+  - general error
+examples:
+  - ErrorResp:
+      success: false
+      status: 417
+      code: '01230'
+      error: missing required fields to create entity xyz
+description: General error response
+x-internal: false
+properties:
+  ErrorResp:
+    description: Generic response of a rest endpoint which may indicate correct or erroneous processing.
+    type: object
+    properties:
+      success:
+        type: boolean
+        description: indicates if the operation was successfully performed or if it failed
+        default: false
+      status:
+        type: integer
+        description: http status code
+        example: 417
+      code:
+        type: string
+        description: code describing more precious reason of system behaviour.
+        example: '01230'
+      error:
+        type: string
+        description: error description if available
+        example: missing required fields to create entity xyz
+    required:
+      - success
+      - status
+      - error

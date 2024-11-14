@@ -1,0 +1,89 @@
+openapi: 3.1.0
+info:
+  title: User Migration
+  version: "1.0"
+  description: |
+    ### cidaas user migration api
+    Migrating to cidaas mostly also implies to migrate users and if applicable also their passwords.
+    The users might even have further fields, groups or roles that might need migration. This specification helps to understand the object that is transferred to cidaas to migrate users
+  summary: User Bulk Migration
+  contact:
+    name: cidaas support
+    url: "https://support.cidaas.com"
+    email: support@cidaas.de
+  termsOfService: "https://www.cidaas.com/terms-of-use/"
+servers:
+  - url: "https://domain"
+    description: base url configured in the system
+    variables:
+      domain:
+        default: cidaas-demo.cidaas.de
+        description: this domain is assigned in cidaas plan and can be one of the allowed domains
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: "https://baseurl/token-srv/token"
+          scopes:
+            openid: openid scope to generate an id_token which requires read access to users
+paths:
+  /users-srv/user/bulk:
+    post:
+      summary: Migrate (add or update) user entities
+      operationId: migrate-users-entities
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ./common/models/errorResponse.yaml
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: ./common/models/errorResponse.yaml
+        "417":
+          description: Expectation Failed
+          content:
+            application/json:
+              schema:
+                $ref: ./common/models/errorResponse.yaml
+      description: |-
+        Migrating to cidaas mostly also implies to migrate users and if applicable also their hashed passwords.
+
+        The users might even have further fields (customFields), groups or roles that might need migration. This specification helps to understand the object that is transferred to cidaas to migrate users
+
+        HINT: This API needs to enabled from cidaas by adding a scope *cidaas:bulk_user_create*. Please share issuer-url and client-id with us.
+      security:
+        - oauth2:
+            - "cidaas:bulk_user_create"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - maxItems: 1000
+                  minItems: 1
+                  items:
+                    $ref: ./user/models/userEntityIdentities.yaml
+                - x-stoplight:
+                    id: zrmx6wgoic017
+                  items:
+                    $ref: ./user/models/userEntityBasic.yaml
+                    x-stoplight:
+                      id: xeja0uab04ewx
+              type: array
+          application/xml:
+            schema:
+              type: array
+              maxItems: 1000
+              minItems: 1
+              items:
+                $ref: ./user/models/userEntity.yaml
+        description: "The request body contains an array of userEntities. The amount of userEntities is limited to 50 at a time. "

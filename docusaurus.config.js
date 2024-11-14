@@ -6,6 +6,8 @@
 
 import { themes as prismThemes } from 'prism-react-renderer';
 
+
+
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
@@ -13,7 +15,9 @@ const config = {
   title: 'Cidaas SDKs',
   tagline: 'Documentation for Cidaas SDKs',
   favicon: 'img/favicon.ico',
-  themes: ['@docusaurus/theme-live-codeblock'],
+  themes: ['@docusaurus/theme-live-codeblock', 'docusaurus-theme-openapi-docs'],
+  // themes: ['@docusaurus/theme-live-codeblock'],
+
 
   // Set the production url of your site here
   url: 'https://tujit.github.io',
@@ -53,6 +57,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
+          docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
         },
         blog: false,
         theme: {
@@ -126,6 +131,18 @@ const config = {
             label: 'JSON Web Token',
           },
           {
+            type: "doc",
+            label: "API",
+            position: "left",
+            docId: 'api/user-migration',
+          },
+          {
+            type: "doc",
+            label: "Integration Documentation",
+            position: "left",
+            docId: 'integration-doc/intro',
+          },
+          {
             type: 'localeDropdown',
             position: 'right',
           },
@@ -188,6 +205,53 @@ const config = {
         additionalLanguages: ['php'],
       },
     }),
+  plugins: [
+    [
+      "docusaurus-plugin-openapi-docs",
+      {
+        id: "openapi",
+        docsPluginId: "classic",
+        config: {
+          // petstore_versioned: {
+          //   specPath: "examples/user-migration.yaml",
+          //   outputDir: "docs/api", // No trailing slash
+          //   sidebarOptions: {
+          //     groupPathsBy: "tag",
+          //     categoryLinkSource: "tag",
+          //   },
+          //   version: "2.0.0", // Current version
+          //   label: "v2.0.0", // Current version label
+          //   baseUrl: "/petstore_versioned/swagger-petstore-yaml", // Leading slash is important
+          //   downloadUrl:
+          //     "https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-openapi-docs/main/demo/examples/petstore.yaml",
+          //   versions: {
+          //     "1.0.0": {
+          //       specPath: "examples/petstore-1.0.0.yaml",
+          //       outputDir: "docs/petstore_versioned/1.0.0", // No trailing slash
+          //       label: "v1.0.0",
+          //       baseUrl: "/petstore_versioned/1.0.0/swagger-petstore-yaml", // Leading slash is important
+          //       downloadUrl:
+          //         "https://redocly.com/_spec/docs/openapi/petstore.json",
+          //     },
+          //   },
+          // },
+          apis: {
+            specPath: "examples/user-migration.yaml",
+            // proxy: "https://cors.pan.dev",
+            outputDir: "docs/api",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              categoryLinkSource: "tag",
+            },
+            // template: "api.mustache", // Customize API MDX with mustache template
+            downloadUrl: "/user-migration.yaml",
+            hideSendButton: false,
+            showSchemas: true,
+          },
+        },
+      },
+    ],
+  ],
 };
 
 export default config;

@@ -1,0 +1,33 @@
+---
+id: useraddress
+title: "userAddress"
+description: "A userAddress represent the address of a user."
+sidebar_label: "userAddress"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"formatted":"string","street_address":"string","locality":"string","region":"string","postal_code":"string","country":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"userAddress"}
+>
+</Heading>
+
+
+
+A userAddress represent the address of a user.
+
+<Schema
+  schema={{"title":"userAddress","type":"object","description":"A userAddress represent the address of a user.","properties":{"formatted":{"type":"string"},"street_address":{"type":"string"},"locality":{"type":"string"},"region":{"type":"string"},"postal_code":{"type":"string"},"country":{"type":"string"}},"examples":[{"userStatus":"VERIFIED","sub":"8dfc4306-9f3b-4a33-95d0-98c8954da2c1","identities":[{"sub":"8dfc4306-9f3b-4a33-95d0-98c8954da2c1","email":"user@example.com","provider":"self"},{"sub":"8dfc4306-9f3b-4a33-95d0-98c8954da2c1","email":"user@example.com","provider":"facebook","providerUserId":"h8cr954da2cs-4a33-98c8954da2c1-9f3b"}],"password_hash_info":{"algorithmTypeId":"BCRYPT_10","passwordHash":"$2b$10$EfrjjYYGih4j4AbnpIWT2OEjvvRoYNBDJ0Wv2E.MwE/oZ87hasAHi"}}]}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

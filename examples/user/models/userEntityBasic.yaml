@@ -1,0 +1,274 @@
+title: userEntity Basic
+x-stoplight:
+  id: 65891a48e2d72
+type: object
+description: A userEntity is used to create or update a user in cidaas.
+examples:
+  - userStatus: VERIFIED
+    sub: 8dfc4306-9f3b-4a33-95d0-98c8954da2c1
+    email: user@example.com
+    password_hash_info:
+      algorithmTypeId: BCRYPT_10
+      passwordHash: $2b$10$EfrjjYYGih4j4AbnpIWT2OEjvvRoYNBDJ0Wv2E.MwE/oZ87hasAHi
+    provider: self
+  - userStatus: VERIFIED
+    sub: 8dfc4306-9f3b-4a33-95d0-98c8954da2c1
+    email: user@example.com
+    password_hash_info:
+      algorithmTypeId: BCRYPT_10
+      passwordHash: $2b$10$EfrjjYYGih4j4AbnpIWT2OEjvvRoYNBDJ0Wv2E.MwE/oZ87hasAHi
+    provider: self
+    family_name: Muster
+    given_name: Max
+  - userStatus: VERIFIED
+    user_status_reason: string
+    username: string
+    given_name: string
+    sub: string
+    email: user@example.com
+    website: 'http://example.com'
+    gender: string
+    zoneinfo: string
+    locale: string
+    birthdate: '2019-08-24'
+    address:
+      formatted: string
+      street_address: string
+      locality: string
+      region: string
+      postal_code: '72399'
+      country: string
+    customFields: {}
+    password: string
+    password_hash_info:
+      algorithmTypeId: string
+      passwordHash: string
+      hData:
+        salt: string
+        iterations: string
+    generate_password: true
+    provider: string
+    identityId: string
+    providerUserId: string
+    street_address: string
+    mfa_enabled: true
+    roles:
+      - string
+    groups:
+      - _id: a3eede9f-8b86-4161-9098-4d5bf9e8b7c9
+        sub: 8dfc4306-9f3b-4a33-95d0-98c8954da2c1
+        groupId: CIDAAS_USERS
+        roles:
+          - DEFAULT_ROLE_A
+          - DEFAULT_ROLE_B
+        createdTime: '2019-08-24T14:15:22Z'
+        updatedTime: '2019-08-24T14:15:22Z'
+    trackId: string
+    rawJSON: string
+    need_reset_password: true
+    no_event: string
+    consent_track_ids:
+      - string
+    consents:
+      - fieldKey: string
+        value: string
+    ignore_default_roles:
+      - string
+  - userStatus: VERIFIED
+    sub: 8dfc4306-9f3b-4a33-95d0-98c8954da2c1
+    email: user@example.com
+    birthdate: '2019-08-24'
+    password_hash_info:
+      algorithmTypeId: BCRYPT_10
+      passwordHash: $2b$10$EfrjjYYGih4j4AbnpIWT2OEjvvRoYNBDJ0Wv2E.MwE/oZ87hasAHi
+    provider: self
+  - userStatus: VERIFIED
+    sub: 8dfc4306-9f3b-4a33-95d0-98c8954da2c1
+    email: user@example.com
+    password_hash_info:
+      algorithmTypeId: BCRYPT_10
+      passwordHash: $2b$10$EfrjjYYGih4j4AbnpIWT2OEjvvRoYNBDJ0Wv2E.MwE/oZ87hasAHi
+    address:
+      street_address: Melodiestr.
+      postal_code: '72399'
+      country: DE
+    provider: self
+properties:
+  sub:
+    type: string
+    description: 'unique identifier of a user. It typically is equal to the unique identifier of the previous system, as it might be known to backend systems'
+    x-stoplight:
+      id: 8zoxw68wq5fhp
+  identityId:
+    type: string
+    description: unique identifier of one identity of a user
+    x-stoplight:
+      id: 8tamo9wyg0jsd
+  userStatus:
+    $ref: ./userStatus.yaml
+    x-stoplight:
+      id: wygh758udvluz
+    description: 'The user status is a mechanism to categorize users, e.g. to deactivate a user, to set it to a verified or pending status. Only users with VERIFIED are able to login. https://docs.cidaas.com/docs/cidaas-iam/623bb7c159180-user-status'
+  user_status_reason:
+    type: string
+    description: brief description of the reason of user status
+    x-stoplight:
+      id: v9jm0pe1usdtn
+  username:
+    type: string
+    description: username of the user
+    x-stoplight:
+      id: yptdgszfq0adv
+  email:
+    type: string
+    description: email of the user
+    format: email
+    x-stoplight:
+      id: zoyghup600jy0
+  mobile_number:
+    type: string
+    description: mobile number of the user
+    x-stoplight:
+      id: 7gzxdwwnzqwba
+  phone_number:
+    type: string
+    description: phone number of the user
+    x-stoplight:
+      id: wo1qqz4tlpfwb
+  given_name:
+    type: string
+    description: given/first name of the user
+    x-stoplight:
+      id: jzkaiahtu1uan
+  family_name:
+    type: string
+    description: surname or last name of the user
+    x-stoplight:
+      id: fey3m2kgngvrq
+  middle_name:
+    type: string
+    description: middle name of a user
+    x-stoplight:
+      id: r7b9uwzlbinjh
+  nickname:
+    type: string
+    description: casual name of the user
+    x-stoplight:
+      id: p35fa2jnso4hg
+  gender:
+    type: string
+    description: users gender
+    x-stoplight:
+      id: no3wnvnd5564x
+  birthdate:
+    type: string
+    format: date
+    description: users birthdate
+    x-stoplight:
+      id: vtzsdvun09kz9
+  locale:
+    type: string
+    description: preferred locale of a user
+    x-stoplight:
+      id: lvckj46rlwc9s
+  profile:
+    type: string
+    description: url of users profile page
+    x-stoplight:
+      id: hjssr8yt9s9ae
+  picture:
+    type: string
+    description: url of users profile picture
+    x-stoplight:
+      id: 0is94fya762sy
+  website:
+    type: string
+    description: url of users web page or blog
+    format: uri
+    x-stoplight:
+      id: cbuddmvgafp3v
+  zoneinfo:
+    type: string
+    description: represents users time zone
+    x-stoplight:
+      id: dyxpmgcrnswvz
+  address:
+    $ref: ./userAddress.yaml
+    x-stoplight:
+      id: 4dj3u4c86apls
+  customFields:
+    type: object
+    description: represents the custom specific fields
+    x-stoplight:
+      id: 914c2yh3c30a9
+  password_hash_info:
+    $ref: ./passwordHashEntity.yaml
+    x-stoplight:
+      id: vylpio9bm0d9j
+  provider:
+    type: string
+    description: provider name indicating the origin of the social identity
+    x-stoplight:
+      id: smx33ohuy247p
+  providerUserId:
+    type: string
+    description: unique identifier of this identity provided by the provider (external identifier)
+    x-stoplight:
+      id: ai4lcybov8qpl
+  mfa_enabled:
+    type: boolean
+    description: true indicates that for this user 2FA is activated
+    x-stoplight:
+      id: 0sulluqod8bdl
+  roles:
+    type: array
+    description: list of roles of a user
+    x-stoplight:
+      id: zx3tvwaq589in
+    items:
+      type: string
+      x-stoplight:
+        id: epoj3dmossedg
+  groups:
+    type: array
+    description: list of groups of a user
+    x-stoplight:
+      id: ryapq0cypbn72
+    items:
+      $ref: ./userGroupMap.yaml
+      x-stoplight:
+        id: osrezbtvch5ax
+  consents:
+    type: array
+    x-stoplight:
+      id: f0acjqy0iup8g
+    items:
+      type: object
+      x-stoplight:
+        id: aht0slfdypmz5
+      properties:
+        fieldKey:
+          type: string
+          description: 'field key to set, if it is configured as registration field setup'
+          x-stoplight:
+            id: 3ykbr3mpno4oz
+        state:
+          type: string
+          x-stoplight:
+            id: dhk0j3kprvs22
+          description: 'state of the consent (REVOKED, ACCEPTED, SKIPPED)'
+        consentId:
+          type: string
+          x-stoplight:
+            id: utivw9cfrhc4u
+          description: id of the consent instance
+        versionId:
+          type: string
+          x-stoplight:
+            id: buz7nvcj5hz6o
+          description: id of the consent version
+        time:
+          type: string
+          x-stoplight:
+            id: ic807x5brdvy1
+          description: consented time

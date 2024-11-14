@@ -1,0 +1,25 @@
+title: mobileEntity
+type: object
+properties:
+  _id:
+    type: string
+  given_phone:
+    type: string
+  phone:
+    type: string
+  country:
+    type: string
+  dail_code:
+    type: string
+  carrier_type:
+    type: string
+  carrier_name:
+    type: string
+  national_format:
+    type: string
+  international_format:
+    type: string
+  E164_format:
+    type: string
+description: A mobileEntity is used to represent mobile and phone numbers.
+x-internal: false

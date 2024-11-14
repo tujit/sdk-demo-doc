@@ -10,6 +10,7 @@
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
+    "gen-api-docs": "docusaurus gen-api-docs all",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids"
   },
@@ -19,6 +20,8 @@
     "@docusaurus/theme-live-codeblock": "3.6.0",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
+    "docusaurus-plugin-openapi-docs": "^4.2.0",
+    "docusaurus-theme-openapi-docs": "^4.2.0",
     "jose": "^5.9.6",
     "prism-react-renderer": "^2.3.0",
     "raw-loader": "^4.0.2",

@@ -1,0 +1,40 @@
+---
+id: userstatus
+title: "userStatus"
+description: "user status"
+sidebar_label: "userStatus"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: "VERIFIED"
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"userStatus"}
+>
+</Heading>
+
+
+
+user status
+
+* VERIFIED - verified user
+* PENDING - pending user status due to missing activation data
+* DELETED - deleted user (shall be physically removed shortly)
+* DECLINED - user has been declined
+* LOCKED - user has been locked
+* COMBINED - user has been merged to another user
+
+<Schema
+  schema={{"type":"string","title":"userStatus","enum":["VERIFIED","PENDING","DELETED","DECLINED","LOCKED","COMBINED"],"description":"user status\n\n* VERIFIED - verified user\n* PENDING - pending user status due to missing activation data\n* DELETED - deleted user (shall be physically removed shortly)\n* DECLINED - user has been declined\n* LOCKED - user has been locked\n* COMBINED - user has been merged to another user"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            
