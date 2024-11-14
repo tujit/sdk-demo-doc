@@ -1,6 +1,3 @@
----
-stoplight-id: x2kqcp1r5agbi
----
 
 # Password Hashing Algorithms and Pluggable Hashing
 

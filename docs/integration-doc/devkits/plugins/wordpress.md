@@ -1,6 +1,3 @@
----
-stoplight-id: j7nt60mny1yy9
----
 
 #  cidaas for WordPress
 

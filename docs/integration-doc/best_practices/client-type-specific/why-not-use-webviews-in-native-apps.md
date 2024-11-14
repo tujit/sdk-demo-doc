@@ -1,6 +1,3 @@
----
-stoplight-id: 8llr918tndyja
----
 
 ## Why Use SFSafariViewController or Trusted Web Activity Instead of WebViews in Native Apps
 

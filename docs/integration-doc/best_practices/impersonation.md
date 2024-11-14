@@ -1,6 +1,3 @@
----
-stoplight-id: f66eclq19r071
----
 
 # Impersonation
 

@@ -1,6 +1,4 @@
----
-stoplight-id: 8llr918tnjyje
----
+
 
 # Native Clients (Native Apps)
 

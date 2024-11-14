@@ -1,18 +1,18 @@
 ---
-stoplight-id: 5p1pwqx9nv9m1
+title: 'User Migration'
+sidebar_position: 2
+# stoplight-id: 2de
 ---
-
 # User Migration
-
 
 The user migration is often the first part of setting cidaas live. 
 Therefore it is important to have a step by step guide, how to start to migrate the users, how to map the data and what are the issues you need to address during migration.
 
 <!-- theme: info -->
 
-> #### Migration Procedures
->
-> For decision making how to go live, the documentation for [one-time-migration](./one_time_migration.md), [bidirectional-sync](./bidirectional_sync_migration.md) or [long-term migration](./sync_migration.md) is more helpful.
+#### Migration Procedures
+
+For decision making how to go live, the documentation for [one-time-migration](./one_time_migration.md), [bidirectional-sync](./bidirectional_sync_migration.md) or [long-term migration](./sync_migration.md) is more helpful.
 
 <!--
 type: tab
@@ -34,7 +34,7 @@ Question | Description
 ---------|-------------
 Which information are you going to migrate | e.g. `email`, `mobile_number`, `password_hash_info`. Those are so called system fields. You need to ensure those are `enabled` in the field setup
 Do you also migrate customFields?| If you have custom information that is not covered by the [system information](https://docs.cidaas.com/docs/cidaas-iam/ffldwxjouiicj-user-field-settings#system-fields) you can create your own custom fields. This you need to provide in the `customFields`as key-value Pair.
-Do you want to migrate users, that have multiple providers? | If you want to migrate users which can have two or more providerinformation e.g. facebook, google and a password, you need to use the `identities` array. [UserEntity](../../reference/user/models/userEntityIdentities.yaml)
+Do you want to migrate users, that have multiple providers? | If you want to migrate users which can have two or more providerinformation e.g. facebook, google and a password, you need to use the `identities` array. [UserEntity](../../../examples/user/models/userEntityIdentities.yaml)
 
 #### Step 2. Create a Token using the client credentials Token
 

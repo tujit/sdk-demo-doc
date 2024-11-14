@@ -1,6 +1,4 @@
----
-stoplight-id: hfowele9fnnxd
----
+
 
 #  cidaas for Typo3
 cidaas provides an extension that is deployed in the Typo3 marketplace and can be configured and used by Typo3 users.

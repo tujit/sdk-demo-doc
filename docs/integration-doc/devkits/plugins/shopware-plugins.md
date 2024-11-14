@@ -1,6 +1,4 @@
----
-stoplight-id: 96y2q24sbw3jf
----
+
 
 ![shopware-banner](../../assets/images/../../../assets/images/banner_shopware.jpg)
 
