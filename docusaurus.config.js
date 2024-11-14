@@ -37,7 +37,13 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    // locales: ['en'],
+    locales: ['en', 'de'],
+    // localeConfigs: {
+    //   en: {
+    //     htmlLang: 'en-US',
+    //   },
+    // },
   },
 
   presets: [
@@ -118,6 +124,10 @@ const config = {
             docId: 'json-web-token/intro',
             position: 'left',
             label: 'JSON Web Token',
+          },
+          {
+            type: 'localeDropdown',
+            position: 'right',
           },
           {
             href: 'https://github.com/Cidaas/cidaas-sdk-php',

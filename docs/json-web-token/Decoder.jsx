@@ -9,14 +9,14 @@ export default function JWTDecoder() {
     setToken(e.target.value);
   };
 
-  const decodeToken = () => {
+  const decodeToken = async () => {
     try {
-      setDecodedToken({
-        "alg": "RS256",
-        "kid": "32234a27-285a-4e41-a5ab-059fc18c6292"
-      });
+      const headerBase64Url = token.split('.')[0];
+      const headerBase64 = headerBase64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const headerJson = atob(headerBase64);
+      setDecodedToken(JSON.parse(headerJson));
     } catch (error) {
-      setDecodedToken({ error: 'Invalid token' });
+      setDecodedToken({ error: error });
     }
   };
 
